@@ -1,0 +1,15 @@
+body {
+    background-color: lightskyblue;
+}
+
+.container-big {
+    padding: 70px;
+    background-color: lightblue;
+    border-radius: 15px;
+    height: 50%;
+}
+
+.line-border {
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}
