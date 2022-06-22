@@ -19,6 +19,12 @@ genTicket.addEventListener('click', function () {
 
     outputNomeCognome.innerText = (document.getElementById('Nome-Cognome').value);
 
+    outputType.innerText = (document.getElementById('Type').value);
+
+    outputTrain.innerText = (document.getElementById('Train').value);
+
+    outputPrice.innerText = (document.getElementById('Price').value);
+
     const Km = document.querySelector('#Km').value;
 
     const Age = document.querySelector('#Age').value;
@@ -30,7 +36,7 @@ genTicket.addEventListener('click', function () {
     console.log('il prezzo originale è: ' + ticketPriceDecimals + '€');
 
 
-    if (userAge < 18) {
+    if (Age < 18) {
 
         ticketFinalPrice = ticketFinalPrice - ((ticketFinalPrice * 20) / 100);
 
@@ -51,5 +57,7 @@ genTicket.addEventListener('click', function () {
 
     console.log(messagePrice)
 
+    outputPrice.innerText = (ticketFinalPrice.toFixed(2) + '€');
 
+    outputTrain.innerText = Math.floor((Math.random() * 5) + 1);
 })
