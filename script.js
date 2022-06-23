@@ -6,6 +6,8 @@ const outputType = document.getElementById('Type');
 
 const outputTrain = document.getElementById('Train');
 
+const outputCP = document.getElementById('CP');
+
 const outputPrice = document.getElementById('Price');
 
 const genTicket = document.querySelector('#button-gen');
@@ -15,6 +17,8 @@ genTicket.addEventListener('click', function () {
     console.log(document.getElementById('Km').value);
     console.log(document.getElementById('Age').value);
     console.log(document.getElementById('Nome-Cognome').value);
+    console.log(document.getElementById('Type').value);
+    console.log(document.getElementById('CP').value);
 
 
     outputNomeCognome.innerText = (document.getElementById('Nome-Cognome').value);
@@ -22,6 +26,8 @@ genTicket.addEventListener('click', function () {
     outputType.innerText = (document.getElementById('Type').value);
 
     outputTrain.innerText = (document.getElementById('Train').value);
+
+    outputCP.innerText = (document.getElementById('CP').value);
 
     outputPrice.innerText = (document.getElementById('Price').value);
 
@@ -41,9 +47,11 @@ genTicket.addEventListener('click', function () {
         ticketFinalPrice = ticketFinalPrice - ((ticketFinalPrice * 20) / 100);
 
         messagePrice = 'Hai diritto ad uno sconto: ' + ticketFinalPrice.toFixed(2) + '€';
+
+
     }
 
-    else if (userAge >= 65) {
+    else if (Age >= 65) {
 
         ticketFinalPrice = ticketFinalPrice - ((ticketFinalPrice * 40) / 100);
 
@@ -51,7 +59,7 @@ genTicket.addEventListener('click', function () {
 
     } else {
 
-        messagePrice = 'il prezzo finale è: ' + ticketFinalPrice.toFixed(2) + '€';
+        messagePrice = 'Il prezzo finale è: ' + ticketFinalPrice.toFixed(2) + '€';
 
     }
 
@@ -59,5 +67,9 @@ genTicket.addEventListener('click', function () {
 
     outputPrice.innerText = (ticketFinalPrice.toFixed(2) + '€');
 
-    outputTrain.innerText = Math.floor((Math.random() * 5) + 1);
+    outputTrain.innerText = Math.floor((Math.random() * 8) + 1);
+
+    outputCP.innerText = Math.floor((Math.random() * 1000) + 1);
+
+    outputType.innerText = ('Biglietto Singolo');
 })
